@@ -1,7 +1,8 @@
 import { ActionsTypes } from "../types/Actiontype"
 const initialState={
     products:[],
-    categoryproduct:[]
+    categoryproduct:[],
+    users:[]
 }
 const productreducer=(state=initialState,{type,payload})=>{
 switch (type) {
@@ -11,7 +12,7 @@ switch (type) {
         return {...state,category:payload};
     case ActionsTypes.CATEGORY_PRODUCT:
         return {...state,categoryproduct:payload}
-       
+    
     default:
         return state;
         

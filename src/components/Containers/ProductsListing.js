@@ -87,7 +87,11 @@ function ProductsListing() {
                   <Typography variant="body2" color="text.secondary">
                     Rs: {product.price} /-
                   </Typography>
+                   <Button variant="outlined" className="texttransform itemfloat cartcolor">Cart</Button> 
+                   <Button variant="outlined" className="texttransform buycolor">Buy</Button> 
                 </CardContent>
+               
+              
               </Card>
             </Grid>
           </div>)
@@ -101,7 +105,7 @@ function ProductsListing() {
         category.map((item) => {
        
           return <div key={item} >
-          <Button href={`/category/${item}`} >{item}</Button></div>;
+          <Button className="texttransform" href={`/category/${item}`} >{item}</Button></div>;
         }):null
       }</div>
     </div>

@@ -35,7 +35,7 @@ function Categorylisting() {
   if (category !== undefined) {
     return category.map((item) => {
    
-      return <div key={item} ><Button href={`/category/${item}`} >{item}</Button></div>;
+      return <div key={item}  ><Button className="texttransform" href={`/category/${item}`} >{item}</Button></div>;
     });
   }
 

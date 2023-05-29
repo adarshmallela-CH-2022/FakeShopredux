@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.texttransform{
+  text-transform: none !important;
+}
  /*.flexing{
   display: flex;
   flex-basis: 300px;
@@ -48,10 +51,7 @@
 
 
 
-<!DOCTYPE html>
-<html>
-<head>
-<style>
+
 * {
   box-sizing: border-box;
 }
@@ -170,7 +170,7 @@ height: 100px !important;
 .productcard{
   
   width:180px;
-  height: 240px;
+  height: 260px;
   padding: 2px;
 }
 .centerscreen{
@@ -183,4 +183,15 @@ height: 100px !important;
 margin-top: 10px;
 padding: 10px;
 
+}
+.itemfloat{
+float: left;
+}
+.cartcolor{
+  background-color: orange !important;
+  color: black !important;
+}
+.buycolor{
+  background-color: rgb(14, 198, 14) !important;
+  color: black !important;
 }

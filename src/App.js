@@ -19,6 +19,7 @@ import Headers from "./components/Containers/Headers";
 import ProductsListing from "./components/Containers/ProductsListing";
 import Categorylisting from "./components/Containers/Categorylisting";
 import Categoryproduct from "./components/Containers/Categoryproduct";
+import Notfound from "./components/Containers/Notfound";
 function App() {
 //   console.log();
 //   const router=createBrowserRouter(createRoutesFromElements(
@@ -30,6 +31,7 @@ function App() {
 //   const Root=()=>{
 //     return 
 //   }
+const isAdmin=true;
   return (
     // // <Provider store={store}>
     // // <div className="App">
@@ -45,21 +47,35 @@ function App() {
     <div className="header">
     <Headers/>
     <div className="topnav">
-  <Link to="/">Home</Link>
-  <a href="/category">category</a>
-  <a href="/products">Products</a>
+    {isAdmin?<div><Link to="/">Home</Link>
+    <a href="/products">Products</a><a href="/category">category</a><a href="/users">Users</a></div>
+:
+<div><Link to="/">Home</Link>
+  <a href="/products">Products</a><a href="/category">category</a></div>}
+  
+
  
+  
 </div>
     <div className="tapnav">
-
-    <Routes>
+     
+{isAdmin ?<Routes>
+  <Route path="/Users"></Route>
+  <Route path="/products" element={<ProductsListing/>}></Route>
+  <Route path="/product/:productId" element={<ProductDetails/>}></Route>
+     <Route path="/category" element={<Notfound/>}></Route>
+     <Route path="/category/:item" element={<Categoryproduct/>}></Route>
+   <Route path="/category" element={<Categorylisting/>}></Route></Routes> :<Routes>
     
-    <Route path="/" element={<ProductsListing/>}></Route>
-    <Route path="/products" element={<ProductsListing/>}></Route>
+   <Route path="/" element={<ProductsListing/>}></Route>
+   <Route path="/products" element={<ProductsListing/>}></Route>
+   <Route path="/product/:productId" element={<ProductDetails/>}></Route>
+      <Route path="/category" element={<Notfound/>}></Route>
+      <Route path="/category/:item" element={<Categoryproduct/>}></Route>
     <Route path="/category" element={<Categorylisting/>}></Route>
-    <Route path="/product/:productId" element={<ProductDetails/>}></Route>
-    <Route path="/category/:item" element={<Categoryproduct/>}></Route>
-    </Routes>
+   </Routes>
+    }
+    
     </div>
     </div>
     </BrowserRouter>

@@ -7,7 +7,7 @@ import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Grid } from "@mui/material";
+import { Grid ,Button} from "@mui/material";
 import { useDispatch, useSelector } from 'react-redux';
 import {selectcategoryproduct} from "../../redux/actions/Productsactions";
 
@@ -59,6 +59,8 @@ useEffect(() => {
                   <Typography variant="body2" color="text.secondary">
                     Rs: {product.price} /-
                   </Typography>
+                  <Button variant="outlined" className="texttransform itemfloat cartcolor">Cart</Button> 
+                  <Button variant="outlined" className="texttransform buycolor">Buy</Button> 
                 </CardContent>
               </Card>
             </Grid>

@@ -24,3 +24,9 @@ return{
     payload:categoryproduct
 }
 }
+export const  listingallusers=(users)=>{
+    return{
+        type:ActionsTypes.All_USERS,
+        payload:users
+    }
+    }
